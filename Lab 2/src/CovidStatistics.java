@@ -18,7 +18,7 @@ import java.util.Scanner;
  * using two nested for-loop to represent the number of recovered persons for
  * each month and each provinces as well as compute the sum for each month.
  *
- * A 1D integer array to store the sum of recovered patient for each province over 8 months,
+ * A 1D integer array to store the row sum of recovered patient for each province over 8 months,
  * finally prompt user to enter the province number, 
  * and then show the sum of recovered patient for corresponding province number.
  * 
@@ -36,9 +36,8 @@ public class CovidStatistics {
 		final int ROWS = 7;
 		final int COLUMNS = 8;
 		Scanner keyboard = new Scanner(System.in);
-		int provinceNum = 1;
 		
-		//create a new 1D array to store the sum of recovered patient for each province
+		//create a new array to store the row sum of recovered patient for each province
 		int[] rowSum = new int[7];
 
 		/* 2D array to store the number of recovered persons for each month and each
@@ -59,7 +58,7 @@ public class CovidStatistics {
 		String[] provinces = { "Ontario", "Quebec", "Nova Scotia", "New Brunswick", "Manitoba", "British Columbia",
 				"Prince Edward Island" };
 
-		System.out.println("ProvinceNum       Month    Feb     March   April   May     June    July    Aug     Sept");
+		System.out.println("Province Num       Month    Feb     March   April   May     June    July    Aug     Sept");
 		System.out.println();
 
 		/**
@@ -73,8 +72,8 @@ public class CovidStatistics {
 		int provinceSum = 0;
 		for (int i = 0; i < ROWS; i++) {
 			provinceSum = 0; // reset provinceSum to zero when start a new row
-			System.out.print(provinceNum + i);
-			System.out.printf("%22s", provinces[i]);
+			System.out.print(i);
+			System.out.printf("%23s", provinces[i]);
 			for (int j = 0; j < COLUMNS; j++) {
 				System.out.printf("%8d", patients[i][j]);
 				provinceSum += patients[i][j];
@@ -87,7 +86,7 @@ public class CovidStatistics {
 		 * A nested for-loop to compute the total sum of recovered people in each month.
 		 */
 		System.out.println();
-		System.out.print("    Recovered Patients  ");
+		System.out.print("     Recovered Patients  ");
 
 		for (int colNum = 0; colNum < COLUMNS; colNum++) {
 			int sum = 0; // reset sum to zero when start new outer-loop
@@ -103,14 +102,15 @@ public class CovidStatistics {
 		System.out.println();
 
 		// Prompt user to enter the province number
-		System.out.println("Please enter the province number to show the total sum of "
-				+ "recovered patient from Feb to Sept 2020. (number 1 - 7)");
+		System.out.println("Enter the number (0 to 6) of the row to sum, "
+				+ "where 0 = Ontario, 1 = Quebec, and so on: ");
 		int userinput = keyboard.nextInt();
 
-		// Show the sum of recovered patient over 8 months for corresponding province based on user input province number
+		/* Show the sum of recovered patient over 8 months for corresponding province 
+		 * based on user input province number
+		 */
 		System.out.printf(
-				"The total sum of recovered patient of " + 
-				"province number %d over 8 months is %,d.", userinput,rowSum[(userinput - 1)]);
+				"The total number of recovered COVID cases was: %,d",rowSum[userinput]);
 		keyboard.close();
 	}
 }
