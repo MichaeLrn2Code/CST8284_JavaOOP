@@ -67,7 +67,7 @@ public class Username {
 	 *                  coming from user's input in main method
 	 */
 	public void setFirstName(String firstName) {
-		this.firstName = firstName.replaceAll("\\s", "");
+		this.firstName = firstName.replaceAll("\\s", "").replaceAll("-","");
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class Username {
 	 *                 coming from user's input in main method
 	 */
 	public void setLastName(String lastName) {
-		this.lastName = lastName.replaceAll("\\s", "");
+		this.lastName = lastName.replaceAll("\\s", "").replaceAll("-","");
 	}
 
 	/**
