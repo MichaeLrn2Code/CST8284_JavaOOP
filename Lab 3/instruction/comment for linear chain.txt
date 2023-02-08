@@ -1,0 +1,90 @@
+package lab3package;
+import java.time.LocalDate;
+
+public class EventSchedule {
+
+	private int year;
+	private int month;
+	private int day;
+	
+	private static String eventName = "unlisted event";
+	
+	public EventSchedule() {
+		this(LocalDate.now().getYear(),LocalDate.now().getMonthValue(), LocalDate.now().getDayOfMonth());
+		System.out.println("EventSchedule() was called");
+	}
+	
+	public EventSchedule(int year) {
+		this(year,LocalDate.now().getMonthValue(), LocalDate.now().getDayOfMonth());
+		System.out.println("EventSchedule(int) was called");
+	}
+	
+	public EventSchedule(int year, int month) {
+		this(year,month,LocalDate.now().getDayOfMonth());
+		System.out.println("EventSchedule(int, int) was called");
+	}
+	
+	public EventSchedule(int year, int month, int day) {
+		setYear(year);
+		setMonth(month);
+		setDay(day);
+		setEventName(eventName);
+		System.out.println("EventSchedule(int, int, int) was called");
+	}
+	
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public int getMonth() {
+		return month;
+	}
+
+	public void setMonth(int month) {
+		this.month = month;
+	}
+	
+	public int getDay() {
+		return day;
+	}
+
+	public void setDay(int day) {
+		this.day = day;
+	}
+	
+	public String getEventName() {
+		return eventName;
+	}
+	
+	public void setEventName(String eventName) {
+		EventSchedule.eventName = eventName;
+	}
+	
+	public String createReport() {
+		return String.format("EventSchedule, " + "year: %d, Month: %d, Day: %d%n",getYear(), getMonth(), getDay());
+	}
+
+
+	public static void main(String[] args) {
+
+		System.out.println("EventSchedule1");
+		EventSchedule EventSchedule1 = new EventSchedule();
+		System.out.println(EventSchedule1.createReport());
+
+		System.out.println("EventSchedule2");
+		EventSchedule EventSchedule2 = new EventSchedule(2024);
+		System.out.println(EventSchedule2.createReport());
+
+		System.out.println("EventSchedule3");
+		EventSchedule EventSchedule3 = new EventSchedule(2024,12);
+		System.out.println(EventSchedule3.createReport());
+
+		System.out.println("EventSchedule4");
+		EventSchedule EventSchedule4 = new EventSchedule(2024, 12 , 15);
+		System.out.println(EventSchedule4.createReport());
+	}
+}

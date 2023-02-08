@@ -1,67 +1,77 @@
+package lab3package;
+
 /**
  * File name: TestDemo.java
  * Author: Wai Wai Chan, 041057469
  * Course: CST8284 – Java
  * Assignment: Lab 03
- * Due Date: 3 Feb 2023
+ * Due Date: 10 Feb 2023
  * Professor: David Houtman
- * Purpose: This program adopts constructor chaining to provide four different ways for user 
- * to create an event schedule, based on the piece of event date information user have.
- */
-
-package lab3package;
-
-/**
- * This is the driver class for this program. This means that it just runs the application with a method
- * main.
+ * Description: This is the driver class for testing the EventSchedule class. 
+ * It creates instances of the EventSchedule class with different constructors
+ * with different amount of parameters, and display the name of constructor being 
+ * called, and the year, month, day, and event name of each instance.
+ * 
  * @author Wai Wai Chan
+ * @version 2.0
  */
 public class TestDemo {
 
 	/**
-	 * This is the entry point for the application, it instantiates 4 EventSchedule
-	 * objects to show-case the constructors. Anonymous objects are used and
-	 * each one is only retained long enough to call method create report on
-	 * each. No variable names were used, just new Constructor().methodCall().
-	 * @param args Command line arguments are not used by this program.
+	 * Main method that runs the program. Five instances of the EventSchdeule class
+	 * are created with different constructors and display the corresponding year,
+	 * month, day and event name of each instance.
+	 * 
+	 * @param args allows for String input arguments to be entered at the Command line; 
+	 * this feature has not been used in this program.
 	 */
 	public static void main(String[] args) {
 
 		/**
-		 * Instantiate an EventSchedule1 object with lack of information 
-		 * of event year, month, day. Constructor sets year, month, and day 
-		 * default to current year, current month, and current day.
-		 */ 
+		 * Instantiate an EventSchedule1 object with lack of information of event year,
+		 * month, day, and event name. Construct a new EventSchedule with default
+		 * current year, month, day, and 'unlisted event'.
+		 * 
+		 */
 		System.out.println("EventSchedule1");
 		EventSchedule EventSchedule1 = new EventSchedule();
 		System.out.println(EventSchedule1.createReport());
-		
+
 		/**
-		 * Instantiate an EventSchedule2 object with only the value of year. 
-		 * Constructor sets the year value as passed, while object's month, 
-		 * and day default sets to current month, and current day.
-		 */ 
+		 * Instantiate an EventSchedule2 object with only the value of year. Construct a
+		 * new EventSchedule with specific value of year as passed, while month, day and
+		 * event name default sets to current month, current day, and 'unlisted event'.
+		 */
 		System.out.println("EventSchedule2");
 		EventSchedule EventSchedule2 = new EventSchedule(2024);
 		System.out.println(EventSchedule2.createReport());
-		
+
 		/**
-		 * Instantiate an EventSchedule3 object with the value of year and month. 
-		 * Constructor sets the year and month value as passed, 
-		 * while object's day default sets to current day.
-		 */ 
+		 * Instantiate an EventSchedule3 object with the value of year and month.
+		 * Construct a new EventSchedule with specific value of year, month as passed,
+		 * while day and event name default sets to current day, and 'unlisted event'.
+		 */
 		System.out.println("EventSchedule3");
-		EventSchedule EventSchedule3 = new EventSchedule(2024,12);
+		EventSchedule EventSchedule3 = new EventSchedule(2024, 12);
 		System.out.println(EventSchedule3.createReport());
-		
+
 		/**
-		 * Instantiate an EventSchedule4 object with the value of year, month, and day. 
-		 * Constructor sets the value of year, month and day to as passed.
-		 */ 
+		 * Instantiate an EventSchedule4 object with the specific value of year, month,
+		 * and day. Construct a new EventSchedule with specific value of year, month,
+		 * day as passed and event name default sets to 'unlisted event'.
+		 */
 		System.out.println("EventSchedule4");
-		EventSchedule EventSchedule4 = new EventSchedule(2024, 12 , 15);
+		EventSchedule EventSchedule4 = new EventSchedule(2024, 12, 15);
 		System.out.println(EventSchedule4.createReport());
-		
+
+		/**
+		 * Instantiate an EventSchedule5 object with the specific value of year, month,
+		 * day and event name. Construct a new EventSchedule with specific value of
+		 * year, month, day and event name as passed.
+		 */
+		System.out.println("EventSchedule5");
+		EventSchedule EventSchedule5 = new EventSchedule(2024, 12, 15,"lab 3");
+		System.out.println(EventSchedule5.createReport());
 
 	}
 
