@@ -13,7 +13,15 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class MyHealthDataTest2 {
+	
+	/**
+	 * Set EPSILON = 1E-12 as a tolerance used to compare two floating number.
+	 */
+	private static final double EPSILON = 1E-12;
 
+	/**
+	 * 
+	 */
 	@Test
 	public void testGetBMI1() {
 		//set up the test
@@ -22,11 +30,9 @@ public class MyHealthDataTest2 {
 		patient1.setHeight(68);
 		
 		//expected value or result
-		final double expectedBMI = 19.0041;
-		
-		final double EPSILON = 0.00001; //epsilon for comparing two double values
-		
 		double actualBMI = patient1.getBMI();
+		final double expectedBMI = 19.004108996540;
+		
 		
 		assertEquals("getBMI() return value does not match expectations",
 				expectedBMI,actualBMI,EPSILON);
@@ -35,21 +41,21 @@ public class MyHealthDataTest2 {
 		patient1 = null;
 	}
 	
+	/**
+	 * 
+	 */
 	@Test
-	public void testGetBMI2() {
+	public void testGetBMIErr() {
 		//set up the test
 		Patient patient2 = new Patient();
 		patient2.setWeight(130);
 		patient2.setHeight(65.3);
 		
 		//expected value or result
-		final double expectedBMI = 21.4;
+		final double expectedBMI = 21.432474455277;
+		double actualBMI = patient2.getBMIErr();
 		
-		final double EPSILON = 0.00001; //epsilon for comparing two double values
-		
-		double actualBMI = patient2.getBMI();
-		
-		assertEquals("getBMI() return value does not match expectations",
+		assertEquals("getBMIErr() return value does not match expectations",
 				expectedBMI,actualBMI,EPSILON);
 
 		//tear down resources i.e. make avail for Garbage Collector

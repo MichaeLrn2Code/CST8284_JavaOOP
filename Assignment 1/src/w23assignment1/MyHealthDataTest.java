@@ -39,7 +39,7 @@ public class MyHealthDataTest {
 		System.out.println("Enter your weight:");
 		weight = keyboard.nextDouble();
 		
-		Patient patient1 = new Patient("firstName","lastName","gender",birthYear, birthMonth,birthDay,height,weight);
+		Patient patient1 = new Patient(firstName,lastName,gender,birthYear, birthMonth,birthDay,height,weight);
 		
 		patient1.displayMyHealthData();
 		

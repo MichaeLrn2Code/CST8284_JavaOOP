@@ -114,6 +114,11 @@ public class Patient {
 	public double getBMI() {
 		return (getWeight() * 703) / (getHeight() * getHeight());
 	}
+	
+// Create a new method to return a incorrect BMI for fail test case in MyHealthDataTest2 Class
+	public double getBMIErr() {
+		return (getWeight() * 703) / (getHeight());
+	}
 
 // TO DO 4: THIS PORTION OF CODE SHOULD DISPLAY ALL THE PATIENT'S HEALTH DATA. DO NOT MISS ANY DATA / INFORMATION
 	public int getAge() {
