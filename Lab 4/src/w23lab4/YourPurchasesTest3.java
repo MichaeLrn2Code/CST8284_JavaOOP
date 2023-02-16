@@ -7,16 +7,16 @@ import org.junit.Test;
 /**
  * File name: YourPurchasesTest3.java
  * Author: Wai Wai Chan, 041057469
- * Course: CST8284 – Java
+ * Course: CST8284, Java
  * Assignment: Lab 04
  * Due Date: 24 Feb 2023
  * Professor: David Houtman
- * Description: This is a Test-class for testing the class member of the YourPurchases class. 
+ * <p>Description: This is a Test-class for testing the getPayment() of the YourPurchases class. 
  * Assumption:
- * - Price of purchased item must be a floating number equal to or greater than zero.
+ * - Price of an purchased item must be a floating number equal to or greater than zero.
  * - The number of coins received in payment must be a integer equal to or greater than zero
  * - No invalid input value such as special characters.
- * 
+ * </p>
  * @author Wai Wai Chan
  * @version 1.0
  */
