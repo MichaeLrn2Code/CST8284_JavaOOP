@@ -319,7 +319,7 @@ public class Patient {
 		System.out.printf(
 				"First name: %s %nLast name: %s %nGender: %s%n"
 						+ "Birth Year: %d, Birth Month: %d, Birth Day: %d, Age: %d%n"
-						+ "Height: %.2f (inches)%nWeight: %.2f (lbs)%nBMI: %.1f%n"
+						+ "Height: %.2f (inches)%nWeight: %.2f (pounds)%nBMI: %.1f%n"
 						+ "Maximum heart rate: %.2f%nTarget heart rate range: %.2f and %.2f%n%n",
 				getFirstName(), getLastName(), getGender(), getBirthYear(), getBirthMonth(), getBirthDay(), getAge(),
 				getHeight(), getWeight(), getBMI(), getMaxHeartRate(), getMinTargetHeartRate(),

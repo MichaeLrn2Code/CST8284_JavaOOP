@@ -59,7 +59,7 @@ public class MyHealthDataTest2 {
 	 * <p>Pre-Condition: Patient object has been created, weight was changed to 199.81 using setWeight(), 
 	 * height was changed to 69.12 using setHeight().</p>
 	 * <p>Post-Condition expected Result: Returned value should be 19.004108996540</P>
-	 * Actual results: Not Match
+	 * Actual results: Fail, the actualBMI returned is 2032.2110821759256
 	 */
 	@Test
 	public void testGetBMIErr() {
