@@ -245,8 +245,8 @@ public class Patient {
 	}
 
 	/**
-	 * Computes and returns the BMI for this Patient. The result 
-	 * hasn't been checked for valid input, having the
+	 * Computes and returns the BMI (which is calculated by inches in height and pounds in weight)
+	 * for this Patient. The result hasn't been checked for valid input, having the
 	 * possibility of returning the unexpected result.
 	 * 
 	 * @return the BMI for this Patient
@@ -275,7 +275,10 @@ public class Patient {
 	 * @return The age for this Patient
 	 */
 	public int getAge() {
-		return (LocalDate.now().getYear() - getBirthYear());
+		int year = LocalDate.now().getYear() - getBirthYear();
+		if (getBirthMonth() >= LocalDate.now().getMonthValue()&&getBirthDay()<= LocalDate.now().getDayOfMonth())
+			year++;
+		return year;
 	}
 
 	/**
