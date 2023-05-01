@@ -275,10 +275,7 @@ public class Patient {
 	 * @return The age for this Patient
 	 */
 	public int getAge() {
-		int year = LocalDate.now().getYear() - getBirthYear();
-		if (getBirthMonth() >= LocalDate.now().getMonthValue()&&getBirthDay()<= LocalDate.now().getDayOfMonth())
-			year++;
-		return year;
+		return (LocalDate.now().getYear() - getBirthYear());
 	}
 
 	/**

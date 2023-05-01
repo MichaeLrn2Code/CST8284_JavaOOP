@@ -68,6 +68,8 @@ public class SalesVP extends SalesChief{
 	 * Checks if two Sales Chiefs are the same person. Returns true if two Sales Chiefs have the same name, 
 	 * the same age the same department, and the difference between their bonus within tolerance which is 0.005,
 	 * , otherwise returns false.
+	 * 
+	 * By Prof: not only name and age need to be equal, all the attributes from superclass eg. location, department
 	 */
 	@Override
 	public boolean equals(Object obj) {

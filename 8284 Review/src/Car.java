@@ -1,6 +1,6 @@
 
 public class Car implements Zoom{
-	void sendMail() {
+	public void sendMail() {
 		System.out.println("Car sent Mail!");
 	}
 }

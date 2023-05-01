@@ -5,40 +5,58 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 
 /**
-   Part I: Implement a class Clock whose getHours, getMinutes and
-   getTime methods return the current time at your location.
-   Return the time as a string.
-
-   Here is how to retrieve the current time as a String:
-    With Java 8, you can use 3 classes in the java.time package:
-      Instant, LocalDateTime and ZoneId. Here's how you do it:
-      String timeString = LocalDateTime.ofInstant(Instant.now(),
-                              ZoneId.systemDefault()).toString()
-      output: 2023-03-15T20:29:27.635912
-
-   you'll need to extract the hours and minutes as a substring.
-*/
+ * File name: Clock.java
+ * Author: Wai Wai Chan, 041057469 
+ * Course: CST8284, Java
+ * Assignment: Assignment 2
+ * Due Date: 24 Mar 2023
+ * Professor: David Houtman
+ * Description: 
+ * This class returns the local current hour, minutes and time as string at user's location.
+ * 
+ * @author Wai Wai Chan
+ * @see java.time.Instant
+ * @see java.time.LocalDateTime
+ * @see java.time.ZoneId
+ */
 public class Clock {
-   // Your work goes here
-	private String hours;
-	private String minutes;
-	private String time;
+
 	
-	String timeString = LocalDateTime.ofInstant(Instant.now(),
-			ZoneId.systemDefault()).toString();
+	// Retrieve the current local time as String by using class LocalTime
+	String timeString = LocalDateTime.ofInstant(Instant.now(), ZoneId.systemDefault()).toString();
 	
-	public String getTime() {
-		return getHours() + getMinutes();
-	}
-	
+	/**
+	 * Returns the current local hour of day, from 00 to 23.
+	 * 
+	 * @return hours The current local hour of day for this Clock
+	 */
 	public String getHours() {
-		return String.format("%tk", timeString);
+		String hours = timeString.substring(11,13);
+		return hours;
 	}
 	
-	
+	/**
+	 * Returns the current local minute of hour as String, from 00 to 59.
+	 * 
+	 * @return minutes The current local minute of hour for this Clock
+	 */
 	public String getMinutes() {
-		return String.format("%tM", timeString);
+		String minutes = timeString.substring(14,16);
+		return minutes;
 	}
+	
+	/**
+	 * Returns the local current time with hour and minute.
+	 * 
+	 * @return A String representing the current local time with hours and minutes for this Clock
+	 */
+	public String getTime() {
+		return String.format("%s:%s", getHours(), getMinutes());
+	}
+	
+	
+	
+
    
 
 
